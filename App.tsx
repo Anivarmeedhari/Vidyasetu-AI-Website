@@ -34,7 +34,9 @@ import {
   Scale,
   Bell,
   Search,
-  MessageSquare
+  MessageSquare,
+  Star,
+  Globe
 } from 'lucide-react';
 
 // --- Constants ---
@@ -258,9 +260,9 @@ const Navbar = ({ onOpenDemo, onOpenCert }: { onOpenDemo: () => void, onOpenCert
 
   const navLinks = [
     { name: 'Vision', href: '#vision' },
+    { name: 'Partner Schools', href: '#partners' },
     { name: 'Features', href: '#features' },
     { name: 'Security', href: '#security' },
-    { name: 'Pricing', href: '#pricing' },
   ];
 
   const handleNavClick = (href: string) => {
@@ -284,7 +286,7 @@ const Navbar = ({ onOpenDemo, onOpenCert }: { onOpenDemo: () => void, onOpenCert
             <div className="w-10 h-10 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-emerald-200 transition-all">
               <span className="text-white font-bold text-xl">V</span>
             </div>
-            <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-r from-emerald-600 to-emerald-800">VidyaSetu AI</span>
+            <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-emerald-600 to-emerald-800">VidyaSetu AI</span>
           </div>
           <div className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
             {navLinks.map((link) => (
@@ -293,7 +295,7 @@ const Navbar = ({ onOpenDemo, onOpenCert }: { onOpenDemo: () => void, onOpenCert
             <button onClick={onOpenCert} className="flex items-center gap-1 hover:text-emerald-600 transition-colors"><Award size={16} /> MSME</button>
           </div>
           <div className="flex items-center gap-3">
-            <button onClick={onOpenDemo} className="hidden lg:block px-6 py-2 rounded-full border border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors">Demo Credentials</button>
+            <button onClick={onOpenDemo} className="hidden lg:block px-6 py-2 rounded-full border border-emerald-500 text-emerald-600 text-sm font-semibold hover:bg-emerald-50 transition-colors">Demo Logs</button>
             <a href={WEB_APP_URL} target="_blank" rel="noopener noreferrer" className="px-6 py-2 rounded-full bg-emerald-500 text-white text-sm font-semibold hover:bg-emerald-600 transition-all shadow-md hover:shadow-emerald-200 flex items-center gap-2">Login <ExternalLink size={14} /></a>
             <button className="md:hidden p-2 rounded-full hover:bg-slate-100 transition-colors" onClick={() => setIsOpen(!isOpen)}>{isOpen ? <X /> : <Menu />}</button>
           </div>
@@ -337,10 +339,10 @@ const Hero = ({ onOpenDemo }: { onOpenDemo: () => void }) => {
               <ExternalLink size={20} /> Open Web App
             </a>
           </div>
-          <div className="mt-12 flex items-center gap-8 grayscale opacity-70">
+          <div className="mt-12 flex items-center gap-8">
             <div className="flex flex-col">
-              <span className="text-xs font-bold uppercase tracking-widest text-slate-400">Trusted By</span>
-              <span className="text-xl font-bold text-slate-800">100+ Schools</span>
+              <span className="text-xs font-bold uppercase tracking-widest text-emerald-600 mb-1">Empowering Excellence</span>
+              <span className="text-xl font-bold text-slate-800 flex items-center gap-2"><CheckCircle size={20} className="text-emerald-500"/> Leading Institutions</span>
             </div>
             <div className="h-8 w-px bg-slate-200" />
             <div className="flex flex-col">
@@ -364,6 +366,114 @@ const Hero = ({ onOpenDemo }: { onOpenDemo: () => void }) => {
           <div className="absolute -top-10 -right-10 w-64 h-64 bg-emerald-400/20 blur-3xl rounded-full -z-10" />
           <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-blue-400/20 blur-3xl rounded-full -z-10" />
         </motion.div>
+      </div>
+    </section>
+  );
+};
+
+const PartnerSection = () => {
+  return (
+    <section id="partners" className="py-24 bg-white relative overflow-hidden scroll-mt-20 border-b border-slate-100">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="text-center max-w-3xl mx-auto mb-20">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 text-emerald-700 text-xs font-bold mb-6 uppercase tracking-wider">
+            <Star size={14} className="fill-emerald-500" /> Case Study: Success in Action
+          </div>
+          <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6">Partners in <span className="text-emerald-600">Educational Excellence</span></h2>
+          <p className="text-lg text-slate-600">See how top institutions are using VidyaSetu AI to transform their daily operations and safety.</p>
+        </div>
+
+        <div className="grid lg:grid-cols-12 gap-12 items-center">
+          <div className="lg:col-span-7">
+            <motion.div 
+              whileHover={{ y: -5 }}
+              className="relative p-1 rounded-[3rem] bg-gradient-to-br from-emerald-400 to-blue-500 shadow-2xl"
+            >
+              <div className="bg-white rounded-[2.8rem] overflow-hidden">
+                <div className="p-8 md:p-12">
+                   <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10">
+                      <div className="flex items-center gap-6">
+                        <div className="w-20 h-20 rounded-3xl bg-blue-50 flex items-center justify-center shadow-inner group">
+                           <Globe size={40} className="text-blue-500 group-hover:rotate-12 transition-transform" />
+                        </div>
+                        <div>
+                          <h3 className="text-3xl font-black text-slate-900 tracking-tight">The Little Wings School</h3>
+                          <p className="text-emerald-600 font-bold uppercase tracking-widest text-sm">Goluwala, Rajasthan</p>
+                        </div>
+                      </div>
+                      <div className="px-6 py-2 rounded-full bg-emerald-500 text-white font-bold text-sm shadow-lg shadow-emerald-200">Integrated Partnership</div>
+                   </div>
+
+                   <div className="grid md:grid-cols-2 gap-8 mb-10">
+                      <div className="space-y-4">
+                        <h4 className="font-bold text-slate-900 border-l-4 border-blue-500 pl-4">Digital Infrastructure</h4>
+                        <ul className="space-y-3">
+                          <li className="flex items-center gap-3 text-slate-600 text-sm font-medium"><Zap size={16} className="text-blue-500"/> Classroom with Smart Boards</li>
+                          <li className="flex items-center gap-3 text-slate-600 text-sm font-medium"><Shield size={16} className="text-blue-500"/> CCTV Enabled Premises</li>
+                          <li className="flex items-center gap-3 text-slate-600 text-sm font-medium"><CheckCircle size={16} className="text-blue-500"/> 24-Hour Power Backup</li>
+                        </ul>
+                      </div>
+                      <div className="space-y-4">
+                        <h4 className="font-bold text-slate-900 border-l-4 border-emerald-500 pl-4">Safety & Comfort</h4>
+                        <ul className="space-y-3">
+                          <li className="flex items-center gap-3 text-slate-600 text-sm font-medium"><Bus size={16} className="text-emerald-500"/> AC Transportation with GPS</li>
+                          <li className="flex items-center gap-3 text-slate-600 text-sm font-medium"><Thermometer size={16} className="text-emerald-500"/> Full AC Campus Facility</li>
+                          <li className="flex items-center gap-3 text-slate-600 text-sm font-medium"><Navigation size={16} className="text-emerald-500"/> Real-time Location Sharing</li>
+                        </ul>
+                      </div>
+                   </div>
+
+                   <div className="bg-slate-50 p-6 rounded-3xl border border-slate-100 flex flex-col md:flex-row items-center justify-between gap-6">
+                      <div className="flex items-center gap-4">
+                         <MapPin size={24} className="text-slate-400" />
+                         <p className="text-sm text-slate-500 font-medium">26 JRK, Goluwala, Teh. Pilibangan, Hanumangarh</p>
+                      </div>
+                      <div className="flex gap-4">
+                        <a href="tel:+919929713492" className="p-3 bg-white rounded-2xl shadow-sm border border-slate-100 text-emerald-600 hover:bg-emerald-50 transition-colors"><Phone size={20}/></a>
+                        <a href={WEB_APP_URL} target="_blank" className="px-6 py-3 bg-slate-900 text-white rounded-2xl font-bold flex items-center gap-2 hover:bg-slate-800 transition-all">Launch Portal <ExternalLink size={16}/></a>
+                      </div>
+                   </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
+          <div className="lg:col-span-5 space-y-8">
+             <div className="p-8 rounded-[2.5rem] bg-emerald-50 border border-emerald-100 relative overflow-hidden shadow-xl">
+                <h4 className="text-2xl font-bold text-slate-900 mb-4">"Play & Learn" Ecosystem</h4>
+                <p className="text-slate-600 leading-relaxed mb-6">The Little Wings School has successfully integrated VidyaSetu AI to manage their vast campus activities, ensuring that safety (GPS Tracking) and education (Digital Feedback) go hand-in-hand.</p>
+                <div className="flex flex-wrap gap-2">
+                   <span className="px-4 py-2 bg-white rounded-xl text-xs font-bold text-slate-600 shadow-sm border border-slate-100">Smart Boards</span>
+                   <span className="px-4 py-2 bg-white rounded-xl text-xs font-bold text-slate-600 shadow-sm border border-slate-100">Live GPS</span>
+                   <span className="px-4 py-2 bg-white rounded-xl text-xs font-bold text-slate-600 shadow-sm border border-slate-100">AC Transport</span>
+                   <span className="px-4 py-2 bg-white rounded-xl text-xs font-bold text-slate-600 shadow-sm border border-slate-100">Digital Attendance</span>
+                </div>
+             </div>
+             
+             <div className="grid grid-cols-2 gap-4">
+                <div className="p-6 rounded-3xl bg-blue-50 border border-blue-100">
+                   <p className="text-2xl font-black text-blue-600 mb-1">100%</p>
+                   <p className="text-xs font-bold text-slate-500 uppercase tracking-widest">Digital Safety Coverage</p>
+                </div>
+                <div className="p-6 rounded-3xl bg-emerald-50 border border-emerald-100">
+                   <p className="text-2xl font-black text-emerald-600 mb-1">Verified</p>
+                   <p className="text-xs font-bold text-slate-500 uppercase tracking-widest">VidyaSetu Gold Status</p>
+                </div>
+             </div>
+
+             <div className="p-8 rounded-[2.5rem] bg-slate-900 text-white relative overflow-hidden group cursor-pointer" onClick={() => window.open(WEB_APP_URL, '_blank')}>
+                <div className="relative z-10 flex items-center justify-between">
+                   <div>
+                     <p className="font-bold text-lg mb-1">Add Your School</p>
+                     <p className="text-slate-400 text-sm">Join the network of future-ready schools.</p>
+                   </div>
+                   <div className="w-12 h-12 rounded-2xl bg-emerald-500 flex items-center justify-center group-hover:translate-x-1 transition-transform">
+                      <ArrowRight size={24} />
+                   </div>
+                </div>
+             </div>
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -547,218 +657,99 @@ const TrustSection = ({ onOpenCert, onOpenLegal }: { onOpenCert: () => void, onO
   );
 };
 
-// --- Custom Animated Living Mockups ---
-
+// Mockup components for RoleExperience
 const PrincipalMockup = () => (
-  <div className="w-full h-full bg-slate-950 p-6 flex flex-col relative overflow-hidden">
-    <div className="flex items-center justify-between mb-8">
-      <div className="flex items-center gap-3">
-        <div className="w-8 h-8 rounded-lg bg-emerald-500" />
-        <div className="w-24 h-3 bg-slate-800 rounded" />
+  <div className="w-full h-full bg-slate-50 p-6 flex flex-col gap-4">
+    <div className="flex justify-between items-center mb-4">
+      <div className="h-4 w-32 bg-slate-200 rounded" />
+      <div className="h-8 w-8 bg-emerald-500 rounded-full" />
+    </div>
+    <div className="grid grid-cols-2 gap-4">
+      <div className="h-24 bg-white rounded-2xl border border-slate-100 p-4 flex flex-col justify-end gap-2">
+        <div className="h-2 w-12 bg-slate-100 rounded" />
+        <div className="h-4 w-full bg-emerald-100 rounded" />
       </div>
-      <div className="flex gap-2">
-        <div className="w-6 h-6 rounded-full bg-slate-800" />
-        <div className="w-6 h-6 rounded-full bg-slate-800" />
+      <div className="h-24 bg-white rounded-2xl border border-slate-100 p-4 flex flex-col justify-end gap-2">
+        <div className="h-2 w-12 bg-slate-100 rounded" />
+        <div className="h-4 w-full bg-blue-100 rounded" />
       </div>
     </div>
-    <div className="grid grid-cols-2 gap-4 mb-6">
-      {[1, 2, 3, 4].map(i => (
-        <motion.div 
-          key={i}
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: i * 0.1, repeat: Infinity, repeatType: "reverse", duration: 3 }}
-          className="p-4 bg-slate-900 rounded-2xl border border-slate-800"
-        >
-          <div className="w-8 h-8 rounded-lg bg-emerald-500/20 mb-3 flex items-center justify-center"><TrendingUp size={16} className="text-emerald-500"/></div>
-          <div className="w-12 h-4 bg-white rounded mb-2" />
-          <div className="w-16 h-2 bg-slate-700 rounded" />
-        </motion.div>
-      ))}
+    <div className="flex-grow bg-white rounded-2xl border border-slate-100 p-4 space-y-3">
+      <div className="h-3 w-3/4 bg-slate-50 rounded" />
+      <div className="h-3 w-1/2 bg-slate-50 rounded" />
+      <div className="h-3 w-2/3 bg-slate-50 rounded" />
     </div>
-    <motion.div 
-      animate={{ y: [0, -100] }}
-      transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-      className="space-y-4"
-    >
-      {[1, 2, 3, 4, 5].map(i => (
-        <div key={i} className="p-3 bg-slate-900 rounded-xl flex items-center gap-3 border border-slate-800/50">
-           <div className="w-8 h-8 rounded-full bg-slate-800" />
-           <div className="flex-grow">
-             <div className="w-20 h-2 bg-slate-700 rounded mb-2" />
-             <div className="w-10 h-1 bg-slate-800 rounded" />
-           </div>
-           <div className="w-4 h-4 rounded bg-emerald-500/30" />
-        </div>
-      ))}
-    </motion.div>
-    <div className="absolute top-4 right-4"><Bell size={18} className="text-emerald-400 animate-pulse" /></div>
   </div>
 );
 
 const TeacherMockup = () => (
-  <div className="w-full h-full bg-emerald-50 p-6 flex flex-col relative overflow-hidden">
-    <div className="flex items-center gap-4 mb-8">
-      <div className="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center"><Users size={24} className="text-emerald-600"/></div>
-      <div className="flex-grow">
-        <div className="w-32 h-4 bg-emerald-200 rounded mb-2" />
-        <div className="w-16 h-2 bg-emerald-100 rounded" />
-      </div>
+  <div className="w-full h-full bg-emerald-50/30 p-6 flex flex-col gap-4">
+    <div className="h-10 bg-white rounded-xl shadow-sm border border-emerald-100 flex items-center px-4 gap-3">
+      <div className="w-4 h-4 rounded-full bg-emerald-500" />
+      <div className="h-2 w-24 bg-slate-200 rounded" />
     </div>
-    <div className="flex-grow bg-white rounded-3xl p-6 shadow-xl border border-emerald-100 flex flex-col relative">
-      <div className="flex items-center justify-between mb-6">
-        <div className="w-24 h-4 bg-slate-100 rounded" />
-        <div className="w-8 h-8 rounded-full bg-emerald-500 text-white flex items-center justify-center"><X size={16}/></div>
+    <div className="flex-grow bg-white rounded-[2rem] shadow-sm border border-slate-100 p-6 space-y-4">
+      <div className="flex items-center gap-3">
+        <div className="w-10 h-10 rounded-full bg-slate-100" />
+        <div className="space-y-2">
+          <div className="h-2 w-20 bg-slate-200 rounded" />
+          <div className="h-2 w-12 bg-slate-100 rounded" />
+        </div>
       </div>
-      <div className="space-y-4 flex-grow">
-        {[1, 2, 3].map(i => (
-          <motion.div 
-            key={i}
-            animate={{ x: [0, 10, 0] }}
-            transition={{ duration: 4, delay: i * 0.5, repeat: Infinity }}
-            className="flex items-center gap-3"
-          >
-            <div className="w-10 h-10 rounded-xl bg-slate-50 border border-slate-100" />
-            <div className="w-full h-2 bg-slate-100 rounded" />
-            <motion.div animate={{ opacity: [0, 1, 0] }} transition={{ duration: 2, repeat: Infinity, delay: i }} className="w-4 h-4 rounded-full bg-emerald-500" />
-          </motion.div>
-        ))}
+      <div className="h-px bg-slate-50 w-full" />
+      <div className="space-y-3">
+        <div className="h-10 bg-slate-50 rounded-lg" />
+        <div className="h-20 bg-emerald-50/50 rounded-lg border border-dashed border-emerald-200 flex items-center justify-center">
+          <UploadCloud size={24} className="text-emerald-300" />
+        </div>
       </div>
-      <motion.button 
-        whileTap={{ scale: 0.95 }}
-        animate={{ scale: [1, 1.05, 1] }}
-        transition={{ duration: 2, repeat: Infinity }}
-        className="mt-4 w-full py-4 bg-emerald-500 text-white rounded-2xl font-bold flex items-center justify-center gap-2 shadow-lg"
-      >
-        Submit Attendance <CheckCircle size={18}/>
-      </motion.button>
-      <motion.div 
-        animate={{ y: [40, 0, 40] }}
-        transition={{ duration: 3, repeat: Infinity }}
-        className="absolute -right-4 top-1/2 p-3 bg-white shadow-2xl rounded-2xl border border-emerald-100"
-      >
-        <UploadCloud size={24} className="text-emerald-500" />
-      </motion.div>
     </div>
   </div>
 );
 
 const ParentMockup = () => (
-  <div className="w-full h-full bg-slate-50 p-6 flex flex-col relative overflow-hidden">
-    <div className="mx-auto w-[240px] h-full bg-slate-900 rounded-[3rem] p-3 border-4 border-slate-800 shadow-2xl relative">
-       <div className="w-16 h-1 bg-slate-800 rounded-full mx-auto mb-4" />
-       <div className="bg-white h-[90%] rounded-[2.5rem] p-4 flex flex-col overflow-hidden">
-          <div className="flex items-center justify-between mb-6">
-            <div className="w-8 h-8 rounded-full bg-slate-100" />
-            <Bell size={16} className="text-slate-400" />
+  <div className="w-full h-full bg-blue-50/30 p-6 flex items-center justify-center">
+    <div className="w-48 h-80 bg-slate-900 rounded-[2.5rem] border-4 border-slate-800 shadow-xl overflow-hidden relative">
+      <div className="absolute top-0 inset-x-0 h-6 flex justify-center">
+        <div className="w-16 h-4 bg-slate-800 rounded-b-xl" />
+      </div>
+      <div className="mt-8 px-4 space-y-4">
+        <div className="bg-white/10 h-8 rounded-lg" />
+        <div className="bg-white rounded-xl p-3 space-y-2">
+          <div className="flex justify-between items-center">
+             <div className="h-2 w-10 bg-slate-200 rounded" />
+             <div className="w-2 h-2 rounded-full bg-emerald-500" />
           </div>
-          <div className="space-y-4">
-            <motion.div 
-              animate={{ opacity: [0, 1] }}
-              className="p-3 bg-emerald-50 rounded-2xl border border-emerald-100"
-            >
-              <div className="flex items-center gap-2 mb-2">
-                <CheckCircle size={12} className="text-emerald-600" />
-                <span className="text-[10px] font-bold text-emerald-800">Homework Checked</span>
-              </div>
-              <div className="w-20 h-2 bg-emerald-200/50 rounded" />
-            </motion.div>
-            <motion.div 
-              animate={{ x: [-10, 0] }}
-              transition={{ delay: 1 }}
-              className="p-3 bg-blue-50 rounded-2xl border border-blue-100"
-            >
-              <div className="flex items-center gap-2 mb-2">
-                <Navigation size={12} className="text-blue-600" />
-                <span className="text-[10px] font-bold text-blue-800">Bus Tracking</span>
-              </div>
-              <div className="w-full h-12 bg-white rounded-xl relative overflow-hidden">
-                 <motion.div 
-                    animate={{ x: [0, 100] }}
-                    transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
-                    className="absolute top-1/2 left-0 -translate-y-1/2"
-                 >
-                   <Bus size={14} className="text-yellow-600" />
-                 </motion.div>
-              </div>
-            </motion.div>
-            <div className="p-3 bg-slate-50 rounded-2xl">
-               <div className="w-24 h-2 bg-slate-200 rounded mb-2" />
-               <div className="grid grid-cols-4 gap-1">
-                 {[1, 2, 3, 4].map(i => <div key={i} className="h-6 bg-slate-100 rounded" />)}
-               </div>
-            </div>
-          </div>
-       </div>
-       <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-slate-800/20" />
+          <div className="h-1.5 w-full bg-slate-50 rounded" />
+        </div>
+        <div className="bg-emerald-500 rounded-xl p-3 h-24 relative overflow-hidden">
+          <div className="relative z-10 text-[10px] font-bold text-white">LIVE TRACKING</div>
+          <div className="absolute bottom-2 right-2"><Bus size={32} className="text-white/20" /></div>
+        </div>
+      </div>
     </div>
   </div>
 );
 
 const DriverMockup = () => (
-  <div className="w-full h-full bg-slate-900 p-6 flex flex-col relative overflow-hidden">
-    <div className="h-2/3 bg-slate-800 rounded-[2.5rem] relative overflow-hidden border border-slate-700 shadow-inner">
-       <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/simple-dashed.png')]" />
-       <motion.div 
-         animate={{ pathLength: [0, 1] }}
-         className="absolute inset-0 flex items-center justify-center"
-       >
-         <svg viewBox="0 0 200 200" className="w-full h-full">
-            <motion.path 
-              d="M20,100 C60,20 140,180 180,100" 
-              fill="transparent" 
-              stroke="#10b981" 
-              strokeWidth="4"
-              strokeDasharray="0 1"
-              animate={{ strokeDashoffset: [1, 0] }}
-              transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-            />
-         </svg>
-       </motion.div>
-       <motion.div 
-          animate={{ offsetDistance: ["0%", "100%"] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-          style={{ offsetPath: "path('M20,100 C60,20 140,180 180,100')" }}
-          className="absolute w-12 h-8 bg-yellow-400 rounded-lg shadow-xl flex items-center justify-center border-2 border-yellow-500"
-       >
-         <Bus size={16} className="text-yellow-900" />
-       </motion.div>
-       <div className="absolute top-6 left-6 p-4 glass rounded-2xl border-white/10">
-          <div className="flex items-center gap-3">
-             <div className="w-10 h-10 rounded-full bg-emerald-500 flex items-center justify-center text-white"><MapPin size={20}/></div>
-             <div>
-               <p className="text-[10px] text-slate-400 font-bold uppercase tracking-widest">Next Stop</p>
-               <p className="text-white font-bold">Hanumangarh Main Gate</p>
-             </div>
-          </div>
-       </div>
-    </div>
-    <div className="flex-grow mt-6 grid grid-cols-2 gap-4">
-       <div className="p-4 bg-slate-800 rounded-2xl flex items-center gap-4">
-          <Clock size={20} className="text-emerald-400" />
-          <div>
-            <p className="text-xs text-slate-500 font-bold uppercase">Time</p>
-            <p className="text-white font-bold">08:15 AM</p>
-          </div>
-       </div>
-       <div className="p-4 bg-slate-800 rounded-2xl flex items-center gap-4">
-          <Navigation size={20} className="text-blue-400" />
-          <div>
-            <p className="text-xs text-slate-500 font-bold uppercase">Speed</p>
-            <p className="text-white font-bold">35 km/h</p>
-          </div>
-       </div>
-    </div>
-    <motion.div 
-      animate={{ opacity: [0, 1, 0] }}
-      transition={{ duration: 2, repeat: Infinity }}
-      className="absolute bottom-10 right-10"
-    >
-      <div className="flex items-center gap-2 px-3 py-1 bg-red-500/20 rounded-full border border-red-500/50">
-         <div className="w-2 h-2 bg-red-500 rounded-full" />
-         <span className="text-[10px] text-red-500 font-bold uppercase tracking-widest">Live Syncing</span>
+  <div className="w-full h-full bg-slate-900 flex flex-col p-6 text-white">
+    <div className="flex justify-between items-center mb-8">
+      <div className="flex items-center gap-2">
+        <div className="w-3 h-3 rounded-full bg-red-500 animate-pulse" />
+        <span className="text-xs font-bold uppercase tracking-widest">On Trip</span>
       </div>
-    </motion.div>
+      <Clock size={18} />
+    </div>
+    <div className="flex-grow flex flex-col justify-center items-center gap-6">
+       <div className="w-24 h-24 rounded-full border-4 border-emerald-500 flex items-center justify-center bg-emerald-500/10">
+          <Navigation size={40} className="text-emerald-500" />
+       </div>
+       <div className="text-center">
+         <p className="text-2xl font-bold">Route 4B</p>
+         <p className="text-slate-400 text-sm">Next Stop: Sector 22</p>
+       </div>
+    </div>
+    <button className="w-full py-4 bg-red-500 rounded-2xl font-bold uppercase tracking-wider text-sm shadow-lg shadow-red-500/20">End Trip</button>
   </div>
 );
 
@@ -816,34 +807,6 @@ const RoleExperience = () => {
               </div>
             </motion.div>
           </AnimatePresence>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-const AISection = () => {
-  return (
-    <section className="py-24 bg-slate-50 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
-          <div className="order-2 md:order-1 relative">
-            <div className="relative z-10 p-12 glass rounded-[3rem] border-emerald-100 border-2 shadow-2xl overflow-hidden">
-              <div className="absolute top-0 right-0 p-8 text-emerald-100 opacity-20"><Brain size={200} /></div>
-              <h3 className="text-3xl font-bold text-slate-900 mb-6">AI as your <span className="text-emerald-600">Personal Assistant</span></h3>
-              <p className="text-lg text-slate-600 mb-8">VidyaSetu AI replacements teachers? <b>Bilkul nahi.</b> AI helps them! Our system handles data analysis so teachers can focus on teaching.</p>
-              <ul className="space-y-4">
-                {["Smart homework suggestions for students", "Automated attendance reports for principals", "Safe route planning for bus drivers", "Learning gap analysis for parents"].map((item, idx) => (
-                  <li key={idx} className="flex items-start gap-3 p-3 rounded-2xl bg-white/50 border border-white/80"><Zap className="text-emerald-500 mt-1 shrink-0" size={18} /><span className="text-slate-700 font-medium">{item}</span></li>
-                ))}
-              </ul>
-            </div>
-          </div>
-          <div className="order-1 md:order-2">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 text-emerald-700 text-xs font-bold mb-6 uppercase tracking-wider"><Brain size={14} /> Intelligent Assistance</div>
-            <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">AI helps schools make <span className="text-emerald-600">better decisions</span></h2>
-            <p className="text-lg text-slate-600 mb-8 leading-relaxed">In a modern world, data is noise unless it is processed. Our AI assistant works in the background to bring you "Insights", not just lists of names. <br/><br/><b>Human-Centric Control:</b> The school principal always remains the primary decision-maker. AI only supports.</p>
-          </div>
         </div>
       </div>
     </section>
@@ -968,7 +931,7 @@ const Footer = ({ onOpenDemo, onOpenCert, onOpenLegal }: { onOpenDemo: () => voi
           <div>
             <h4 className="text-white font-bold text-lg mb-8 uppercase tracking-widest">Platform</h4>
             <ul className="space-y-4">
-              <li><button onClick={onOpenDemo} className="hover:text-white transition-colors cursor-pointer text-left">Demo Credentials</button></li>
+              <li><button onClick={onOpenDemo} className="hover:text-white transition-colors cursor-pointer text-left">Demo Logs</button></li>
               <li><a href={WEB_APP_URL} target="_blank" className="hover:text-white transition-colors flex items-center gap-2">Live Web App <ExternalLink size={14} /></a></li>
               <li><button onClick={() => document.getElementById('features')?.scrollIntoView({behavior:'smooth'})} className="hover:text-white transition-colors cursor-pointer text-left">Feature List</button></li>
               <li><button onClick={() => document.getElementById('pricing')?.scrollIntoView({behavior:'smooth'})} className="hover:text-white transition-colors cursor-pointer text-left">Price Plans</button></li>
@@ -1010,11 +973,11 @@ function App() {
       <Navbar onOpenDemo={() => setIsDemoOpen(true)} onOpenCert={() => setIsCertOpen(true)} />
       <main>
         <Hero onOpenDemo={() => setIsDemoOpen(true)} />
+        <PartnerSection />
         <AppLifecycleAnimation />
         <VisionSection />
         <TrustSection onOpenCert={() => setIsCertOpen(true)} onOpenLegal={(t) => setLegalType(t)} />
         <RoleExperience />
-        <AISection />
         <Pricing />
         <FounderMessage />
         <section className="py-24 bg-white scroll-mt-20">
@@ -1035,5 +998,8 @@ function App() {
     </div>
   );
 }
+
+// Re-defining internal components for completeness
+const Thermometer = ({ size, className }: { size: number, className: string }) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z"/><path d="M10 9h4"/></svg>;
 
 export default App;
