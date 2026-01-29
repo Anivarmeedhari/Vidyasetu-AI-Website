@@ -38,7 +38,7 @@ import {
 } from 'lucide-react';
 
 // --- Constants ---
-const WEB_APP_URL = "https://vidyasetuai-ashy.vercel.app/";
+const WEB_APP_URL = "https://app.vidyasetuai.com";
 const UDYAM_REG_NO = "UDYAM-RJ-16-0040771";
 
 // --- Components ---
@@ -284,7 +284,7 @@ const Navbar = ({ onOpenDemo, onOpenCert }: { onOpenDemo: () => void, onOpenCert
             <div className="w-10 h-10 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-emerald-200 transition-all">
               <span className="text-white font-bold text-xl">V</span>
             </div>
-            <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-emerald-600 to-emerald-800">VidyaSetu AI</span>
+            <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-r from-emerald-600 to-emerald-800">VidyaSetu AI</span>
           </div>
           <div className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
             {navLinks.map((link) => (
@@ -941,9 +941,9 @@ const Footer = ({ onOpenDemo, onOpenCert, onOpenLegal }: { onOpenDemo: () => voi
             </div>
             <p className="max-w-md text-lg text-slate-500 mb-10 leading-relaxed">The secure, unified digital operating system for modern Indian schools. Proudly registered under MSME, Govt of India.</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <a href="mailto:vidyasetu.ai.india@gmail.com" className="flex items-center gap-3 hover:text-emerald-400 transition-colors group">
+              <a href="mailto:support@vidyasetuai.com" className="flex items-center gap-3 hover:text-emerald-400 transition-colors group">
                 <div className="w-10 h-10 rounded-full bg-slate-900 flex items-center justify-center group-hover:bg-emerald-500/10 transition-colors"><Mail size={18} /></div>
-                <span className="text-sm">vidyasetu.ai.india@gmail.com</span>
+                <span className="text-sm">support@vidyasetuai.com</span>
               </a>
               <div className="flex flex-col gap-4">
                  <div className="flex items-start gap-3">
@@ -959,6 +959,7 @@ const Footer = ({ onOpenDemo, onOpenCert, onOpenLegal }: { onOpenDemo: () => voi
                     <span className="text-[10px] uppercase font-bold tracking-widest text-slate-600 mb-1">Help & Management</span>
                     <a href="tel:+918005833036" className="text-sm text-slate-300 hover:text-emerald-400 transition-colors">+91 80058 33036</a>
                     <a href="tel:+919587967069" className="text-sm text-slate-300 hover:text-emerald-400 transition-colors">+91 95879 67069</a>
+                    <a href="tel:+919929922698" className="text-sm text-slate-300 hover:text-emerald-400 transition-colors">+91 99299 22698</a>
                   </div>
                  </div>
               </div>
